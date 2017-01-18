@@ -1,0 +1,21 @@
+{
+  "name": "codecoyotes/silverstripe-documentations",
+  "description": "Documentaion page module for silverstripe",
+  "type": "silverstripe-module",
+  "keywords": [
+	"silverstripe",
+	"docs",
+	"documentation"
+  ],
+  "authors": [
+	{
+	  "name": "CodeCoyotes"
+	}
+  ],
+  "extra": {
+	"installer-name": "documentations"
+  },
+  "require": {
+	"silverstripe-australia/gridfieldextensions": "1.4.2"
+  }
+}
