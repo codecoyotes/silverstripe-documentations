@@ -13,7 +13,12 @@ class DocumentationSection extends DataObject {
 	);
 
 	private static $has_one = array(
-		'Page' => 'DocumentationPage'
+		'Page' => 'DocumentationPage',
+		'ParentSection' => 'DocumentationSection'
+	);
+
+	private static $has_many = array(
+		'Sections' => 'DocumentationSection'
 	);
 
 	private static $summary_fields = array(
@@ -30,6 +35,15 @@ class DocumentationSection extends DataObject {
 
 		$fields->removeByName('Sort');
 		$fields->removeByName('PageID');
+		$fields->removeByName('ParentSectionID');
+
+		if($this->exists()){
+			$sectionsConfig = GridFieldConfig_RecordEditor::create();
+			if(class_exists('GridFieldOrderableRows')){
+				$sectionsConfig->addComponent(new GridFieldOrderableRows());
+			}
+			$fields->addFieldToTab('Root.Sections', new GridField('Sections', _t('DocumentationSection.PLURAL_NAME', 'Sections'), $this->Sections(), $sectionsConfig));
+		}
 
 		return $fields;
 	}
