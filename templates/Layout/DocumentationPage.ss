@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<div class="panel" data-stickinparent="true">
+				<div class="panel panel-elastic" data-stickinparent="true">
 					<div class="panel-header">
 						Navigation
 					</div>
@@ -25,7 +25,6 @@
                 <% loop $Sections %>
 					<div id="$Slug">
 						<h2>{$Pos}. $Title</h2>
-						<hr />
                         $Content
                         <% if $Sections %>
                             <% loop $Sections %>
