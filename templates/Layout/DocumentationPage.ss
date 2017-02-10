@@ -1,3 +1,4 @@
+<% cached 'documentation', $LastEdited, $ID %>
 <div class="block">
 	<div class="container">
 		<div class="row">
@@ -40,3 +41,4 @@
 		</div>
 	</div>
 </div>
+<% end_cached %>
